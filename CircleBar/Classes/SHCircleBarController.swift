@@ -57,6 +57,12 @@ class SHCircleBarController: UITabBarController {
         circleImageView.isUserInteractionEnabled = false
         circleImageView.contentMode = .center
         
+        if traitCollection.userInterfaceStyle == .light {
+             circleImageView.backgroundColor = .white
+         } else {
+             circleImageView.backgroundColor = .black
+         }
+        
         circleView.addSubview(circleImageView)
         self.view.addSubview(circleView)
         let tabWidth = self.view.bounds.width / CGFloat(self.tabBar.items?.count ?? 4)

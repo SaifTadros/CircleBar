@@ -45,6 +45,7 @@ import UIKit
         mask.fillRule = .evenOdd
         mask.fillColor = UIColor.white.cgColor
         mask.path = bezPath.cgPath
+        
         if (self.animated) {
             let bezAnimation = CABasicAnimation(keyPath: "path")
             let bezPathFrom = drawPath(for: previousIndex)
