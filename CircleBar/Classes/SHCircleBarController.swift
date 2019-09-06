@@ -123,7 +123,7 @@ class SHCircleBarController: UITabBarController {
                 self.circleView.frame = CGRect(x: (tabWidth * CGFloat(idx) + tabWidth / 2 - 30), y: self.tabBar.frame.origin.y - 15, width: 60, height: 60)
             }
             UIView.animate(withDuration: 0.15, animations: {
-                self.circleImageView.alpha = 0
+                self.circleImageView.alpha = 1
             }) { (_) in
                 self.circleImageView.image = self.image(with: item.image, scaledTo: CGSize(width: 30, height: 30))
                 UIView.animate(withDuration: 0.15, animations: {
