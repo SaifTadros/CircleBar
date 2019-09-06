@@ -59,11 +59,11 @@ class SHCircleBarController: UITabBarController {
         circleImageView.isUserInteractionEnabled = false
         circleImageView.contentMode = .center
         
-//        if traitCollection.userInterfaceStyle == .light {
-//             circleImageView.backgroundColor = .white
-//         } else {
-//             circleImageView.backgroundColor = .black
-//         }
+        if traitCollection.userInterfaceStyle == .light {
+             circleImageView.backgroundColor = .white
+         } else {
+             circleImageView.backgroundColor = .systemGray
+         }
         
         circleView.addSubview(circleImageView)
         self.view.addSubview(circleView)
@@ -121,9 +121,11 @@ class SHCircleBarController: UITabBarController {
             let tabWidth = self.view.bounds.width / CGFloat(self.tabBar.items!.count)
             UIView.animate(withDuration: 0.3) {
                 self.circleView.frame = CGRect(x: (tabWidth * CGFloat(idx) + tabWidth / 2 - 30), y: self.tabBar.frame.origin.y - 15, width: 60, height: 60)
+                self.circleView.backgroundColor = .none
             }
             UIView.animate(withDuration: 0.15, animations: {
                 self.circleImageView.alpha = 0
+                self.circleView.backgroundColor = .none
             }) { (_) in
                 self.circleImageView.image = self.image(with: item.image, scaledTo: CGSize(width: 30, height: 30))
                 UIView.animate(withDuration: 0.15, animations: {
