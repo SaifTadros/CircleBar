@@ -43,7 +43,12 @@ import UIKit
         bezPath.fill()
         let mask = CAShapeLayer()
         mask.fillRule = .evenOdd
-        mask.fillColor = UIColor.white.cgColor
+        if traitCollection.userInterfaceStyle == .light {
+            mask.fillColor = UIColor.white.cgColor
+        }else{
+            mask.fillColor = UIColor.black.cgColor
+        }
+        
         mask.path = bezPath.cgPath
 
         if (self.animated) {
