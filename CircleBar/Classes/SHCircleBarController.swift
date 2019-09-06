@@ -35,6 +35,7 @@ class SHCircleBarController: UITabBarController {
                 return
             }
             tabBar.select(itemAt: selectedIndex, animated: true)
+            tabBar.backgroundColor = .red
         }
     }
     
