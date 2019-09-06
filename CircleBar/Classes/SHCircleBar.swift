@@ -45,7 +45,7 @@ import UIKit
         mask.fillRule = .evenOdd
         mask.fillColor = UIColor.white.cgColor
         mask.path = bezPath.cgPath
-        
+
         if (self.animated) {
             let bezAnimation = CABasicAnimation(keyPath: "path")
             let bezPathFrom = drawPath(for: previousIndex)
@@ -68,9 +68,17 @@ import UIKit
     }
     
     func customInit(){
-        self.tintColor = .white
-        self.barTintColor = .white
-        self.backgroundColor = .white
+
+        if traitCollection.userInterfaceStyle == .light {
+            self.tintColor = .white
+            self.barTintColor = .white
+            self.backgroundColor = .white
+         } else {
+            self.tintColor = .black
+            self.barTintColor = .black
+            self.backgroundColor = .black
+         }
+        
     }
     private func drawPath(for index: CGFloat) -> UIBezierPath {
         let bezPath = UIBezierPath()
