@@ -29,7 +29,12 @@ import UIKit
         
     }
     override func draw(_ rect: CGRect) {
-        let fillColor: UIColor = .white
+        var fillColor: UIColor = .white
+        if traitCollection.userInterfaceStyle == .light {
+            fillColor = .white
+        } else {
+            fillColor = .black
+        }
         tabWidth = self.bounds.width / CGFloat(self.items!.count)
         let bezPath = drawPath(for: index)
         
